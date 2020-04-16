@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons>
+      <ion-button (click)="close()">Close
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()">Save
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Meterage (m2)
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-range dualKnobs="true" min="15" max="150" pin="true" color="primary" [(ngModel)]="meterage">
+        <ion-label slot="start">15</ion-label>
+        <ion-label slot="end">150</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Price (PLN)
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-range dualKnobs="true" min="50000" max="1000000" pin="true" color="secondary" [(ngModel)]="price">
+        <ion-label slot="start">50000</ion-label>
+        <ion-label slot="end">1000000</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Region</ion-label>
+      <ion-select [(ngModel)]="region" interface="action-sheet">
+        <ion-select-option value="Wszystko">Wszystko</ion-select-option>
+        <ion-select-option value="Ruczaj">Ruczaj</ion-select-option>
+        <ion-select-option value="Borek Fałecki-Łagiewniki">Borek Fałecki-Łagiewniki</ion-select-option>
+        <ion-select-option value="Grzegorzki">Grzegórzki</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

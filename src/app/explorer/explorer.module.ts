@@ -6,6 +6,7 @@ import { ExplorerPageRoutingModule } from './explorer-routing.module';
 import { ListPage } from './list/list.page';
 import { ExplorerService } from './explorer.service';
 import { FilterPage } from './filter/filter.page';
+import { DetailsPage } from './details/details.page';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { FilterPage } from './filter/filter.page';
     IonicModule,
     ExplorerPageRoutingModule
   ],
-  declarations: [ListPage, FilterPage],
+  declarations: [ListPage, FilterPage, DetailsPage],
   providers: [
     ExplorerService
   ]

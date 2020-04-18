@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons>
+      <ion-button routerLink='/explorer'>Close
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="addToFavorites()">
+        <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input class="ion-text-wrap">{{flat.name}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Data dodania
+      </ion-label>
+      <ion-input type="text" [ngModel]="flat.dateAdded  | date:'d MMM yyyy'" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Cena
+      </ion-label>
+      <ion-input type="text" [ngModel]="flat.price" readonly></ion-input> zł
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Metraż
+      </ion-label>
+      <ion-input type="text" [ngModel]="flat.meterage" readonly></ion-input> m2
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Cena za m2
+      </ion-label>
+      <ion-input type="text" [ngModel]="flat.price / flat.meterage | number" readonly></ion-input> zł/m2
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Opłacalność
+      </ion-label>
+      <ion-input type="text" [ngModel]="'Brak danych'" readonly color="danger"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">
+        Wycena
+      </ion-label>
+      <ion-button expand="block" class="ion-no-margin" color="secondary" disabled="disabled">Zamów wycenę</ion-button>
+    </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-button expand="block" class="ion-no-margin" (click)="goToUrl(flat.url)">Zobacz</ion-button>
+  </div>
+</ion-content>

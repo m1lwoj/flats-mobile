@@ -15,6 +15,10 @@ import { AuthService } from './auth/auth.service';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
 
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -37,6 +41,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService,
+    SQLite,
+    SQLitePorter,
   ],
   bootstrap: [AppComponent]
 })

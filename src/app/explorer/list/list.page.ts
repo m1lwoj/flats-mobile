@@ -36,7 +36,7 @@ export class ListPage implements OnInit {
     }, 500);
   }
 
-  showDetails(event) {
+  showDetails() {
     
   }
 
@@ -56,8 +56,13 @@ export class ListPage implements OnInit {
       }
 
       this.page++;
+    },
+    err => {
       loading.dismiss();
-    });
+    },
+    () => {
+      loading.dismiss();
+    })
   }
 
   refresh() {

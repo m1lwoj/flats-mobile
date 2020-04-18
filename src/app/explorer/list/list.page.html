@@ -5,9 +5,9 @@
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-icon name="switch"></ion-icon>
-        <ion-button (click)="showFilter()">
-          <ion-icon slot="icon-only" name="options"></ion-icon>
-        </ion-button>
+      <ion-button (click)="showFilter()">
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
       <!-- <ion-button auto-hide="false"></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Explorer</ion-title>
@@ -18,15 +18,12 @@
 <ion-content>
   <div id="container">
     <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
-      <ion-refresher-content
-        pullingIcon="arrow-dropdown"
-        pullingText="Pull to refresh"
-        refreshingSpinner="circles"
+      <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
         refreshingText="Refreshing...">
       </ion-refresher-content>
     </ion-refresher>
     <ion-list #virtualScroll>
-      <ion-item *ngFor="let flat of dataList" button (click)="showDetails()">
+      <ion-item *ngFor="let flat of dataList" routerLink='/explorer/details/{{flat.id}}'>
         <ion-label>
           <h2>{{flat.name}}</h2>
           <p>{{flat.dateAdded | date:'d MMM yyyy'}}, {{flat.pricepermeter | currency:'PLN'}} per m2</p>

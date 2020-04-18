@@ -32,4 +32,8 @@ export class ExplorerService {
         url = url + '&Results=30&OrderBy=dateAdded&SortOrder=Desc';
         return this.httpClient.get<FlatList>(url);
     }
+
+    public getFlat(id: string): Observable<Flat> {
+        return this.httpClient.get<Flat>(this.baseUrl + '/flats/' + id);
+    }
 }

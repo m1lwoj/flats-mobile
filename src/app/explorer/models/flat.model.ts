@@ -1,9 +1,15 @@
 export class Flat {
-    constructor(public price: number,
+    constructor(public id: string,
+                public price: number,
                 public meterage: number,
                 public pricepermeter: number,
                 public url: string,
-                public dateAdded: Date) {
+                public dateAdded: Date,
+                public name: string) {
+    }
+
+    static create(){
+        return new Flat('', 0, 0, 0, '', new Date(), '');
     }
 }
 
